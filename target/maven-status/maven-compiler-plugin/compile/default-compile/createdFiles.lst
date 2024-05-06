@@ -1,0 +1,13 @@
+Utils\HandleInputs.class
+Utils\TextsToBeTyped.class
+Views\Campaing\StoryTexts.class
+Utils\AsciiArts.class
+Views\Campaing\Powers.class
+Views\Menu.class
+Views\Ranking.class
+Utils\HandleText.class
+Views\Campaing\Tournament.class
+com\mycompany\fasttyper\FastTyper.class
+Utils\Terminal.class
+Utils\HandleType.class
+Views\Campaing\Campaing.class
