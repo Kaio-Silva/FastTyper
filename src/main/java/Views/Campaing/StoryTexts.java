@@ -19,53 +19,53 @@ public class StoryTexts {
         "Eu sou a **Avazeza**, o apego dos mortais pelo mundo fisico me criou,\n"+
         "e voce me ajudou pequena alma, agora perca pra mim para eu colocar sua\n"+
         "cabeça na minha coleção.",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!" ,
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Você pode tirar tudo de mim, exceto minha ganância.",
+        "Eu deixo para trás minhas riquezas, agora apenas sombras de uma vida de acumulação" ,
+        "Agora sua pele fara parte da minha colecao!!!"
     },{
         "Eu Sou a **Gula** muahhahahaa, e estou com uma fome inssasiavel, talvez depois\n"+
         "dessa batalha eu vá para um churrasquinho, ou melhor eu posso usar sangue para\n"+
         "fazer um belo drink para mim muhahahahha.",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!",
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Coma ou seja comido, e agora é a minha vez de devorar",
+        "Meu apetite insaciável me leva para além, para um reino de banquetes eternos ou para o vazio da eternidade",
+        "Agora meu banquete sera a sua deliciosa cabeca e seu precioso sangue"
     },{
         "Sou a **Inveja**, e estou nessa competição apenas para tomar o poder desse lugar,\n"+
         "e de tudo, não gosto de quem tem mais do que, eu quero ter tudo, TUDO,\n"+
         "quero inclusive a sua ALMA",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!" ,
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "e eu não posso te ter, ninguém terá",
+        "Minha inveja se desvanece, deixando espaço para a escuridão silenciosa." ,
+        "Eu nunca tive o que desejei, mas agora você também não terá!!!"
     },{
         "HAAAAAAAA!!!, SOU A **IRA** E NAO TENHO MOTIVOS PARA ESTAR COM RAIVA, NAO ME MANDE ABAIXAR\n"+
         "A VOZ OU EU TE BATO, NAO DIGA PARA EU NAO BATER NOS OUTROS SE NAO EU TE BATO, NAO DIGA PARA\n"+
         "NAO TE BATER SE NAO EU TE BATO. CHEGA DE CONVERSAR TA NA HORA DE TE ARREBENTAR.",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!" ,
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Minha ira será a tempestade que varrerá sua existência.",
+        "Minha fúria é minha força e minha perdição" ,
+        "AAAAAAAAAAAAH, A MORTE, EU A ODEIO ODEIO..."
     },{
         "Sou a **luxuria**, e pra ser sincero te acho ate um pouco bonitinho mas nada comparado a\n"+ 
         "minha beleza, talvez a sua pele sirva para eu fazer um belo casaco.",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!" ,
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Você despertou meus desejos mais profundos, agora sinta seu fogo queimar",
+        "Minha luxúria se desvanece, deixando apenas a névoa do desejo" ,
+        "Agora meu DESEJO de beber o sue sangue podera ser concluido"
     },{
         "Sou a **preguiça** e... estou com preguiça de falar",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!" ,
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Eu descansarei enquanto você luta.",
+        "Eu poderia ter feito mais, mas preferi não fazer" ,
+        "ZZzzZzZZzzzZzzz..."
     },{
         "Ola pequenino sou a **Morte**, ceifadora dos bons e dos mals, estou aqui para entrar em \n"+ 
         "um amistos desafio com voce. Não se preucupe nao sou biruta como seus advesarios anteriores... \n"+
         "agora prepare-se." ,
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!" ,
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Vamos la, confio em voce, tente novamente",
+        "bela batalha pequeno ser, " ,
+        "que pena, agora sua pobre alma sera minha, assim como a de todos os outros..."
     }, {
         "HISTORIA DE ENTRADA BOSS",
-        "VAMOS CONTINUAR ATÉ EU ACABAR COM VOCÊ",
-        "ADEUS, VOCE TEVE SORTE!!!",
-        "VOCÊ TEVE MUITA OUSADIA EM PENSAR QUE PODIA ME VENCER, AGORA SOFRA PELA ETERNIDADE AQUI COMIGO!!!"
+        "Eu te dei tudo, agora é hora de eu tomar tudo de volta.",
+        "Meu reino está além das chamas, e eu sou seu soberano.",
+        "O abismo lhe aguarda, e lá eu reinarei em meio ao caos eterno sobre voce."
     }
     };
     
