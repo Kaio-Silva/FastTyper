@@ -3,12 +3,14 @@ package Views.Campaing;
 import Utils.*;
 import com.mycompany.fasttyper.FastTyper;
 
-
 public class Campaing {
-    public static boolean winGame = false;
+    public static boolean wonGame = false;
     public static boolean tournamentStarted = false;
-    
-    public static int mainCampaing() {        
+    static int lifes = 3;
+
+    public static int mainCampaing() {  
+        boolean gameOver = false;
+
         if(!FastTyper.first){
             StoryTexts.story[0][0] = "Bem vindo de volta, %s! Parece que você não aprendeu sua lição... Então, vamos recomeçar tudo!";
         }
@@ -19,20 +21,22 @@ public class Campaing {
             Terminal.continueTo("\nPress \"Enter\" para continuar....");
         }
         
-        boolean lostTournament = Tournament.mainTournament();
-        
-        if(lostTournament)
+        gameOver = Tournament.mainTournament(gameOver);
+        FastTyper.first = false;
+        tournamentStarted = false;
+        Tournament.whichPower = 0;
+        lifes = 3;
+         
+        if(gameOver)
             HandleText.align("\n------- GAME OVER -------\n", "center", "red");
         
-        if(!winGame && !lostTournament){
+        if(!wonGame && !gameOver){
             HandleText.align("\n### MODO RANKING DESBLOQUEADO ###\n", "center", "green");
-            winGame = true;
+            wonGame = true;
         }
            
-         Terminal.continueTo("\nPress \"Enter\" para ao menu...");
-         FastTyper.first = false;
-         tournamentStarted = false;
-         
-         return 0;
+        Terminal.continueTo("\nPress \"Enter\" para ao menu..."); 
+        
+        return 0;
     }
 }

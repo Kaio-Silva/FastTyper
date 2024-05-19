@@ -10,7 +10,7 @@ public class Menu {
     public static int mainMenu(int i) {
         int option;
         String warning = HandleText.colorText("Ajuste o tamanho do terminal para jogar: A logo tem que ser totalmente visível.\n","yellow");
-        String[] options = {"1 - Modo Ranking", "2 - Modo Campanha", HandleText.colorText("3 - Sair", "red")};
+        String[] options = {"Modo Ranking", "Modo Campanha", HandleText.colorText("Sair", "red")};
         
         do { 
             if(i == -1){

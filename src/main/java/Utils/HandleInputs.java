@@ -1,9 +1,8 @@
 package Utils;
 
-import com.mycompany.fasttyper.FastTyper;
 import java.util.Scanner;
-
 import Views.Campaing.Campaing;
+
 
 public class HandleInputs {
     static Scanner input = new Scanner(System.in);
@@ -21,7 +20,7 @@ public class HandleInputs {
             resp = getTextInput("", "", "", choosePower);
             warn = errorMessage;
             choosePower = false;
-        }while(!resp.equalsIgnoreCase("sim") && !resp.equalsIgnoreCase("nao"));
+        } while(!resp.equalsIgnoreCase("sim") && !resp.equalsIgnoreCase("nao"));
         
         return resp;
     }
@@ -36,21 +35,24 @@ public class HandleInputs {
     
     public static String getTextInput(String message, String errorMessage, String textCompare, boolean choosePower){
         String text;
-        
+
         do{
             System.out.printf(message);
             
-            if(!FastTyper.first || Campaing.tournamentStarted){
-                if(choosePower) {
+            if(Campaing.tournamentStarted){
+                if(choosePower) { 
                     input.nextLine();
                 } 
             }
-              
             text = input.nextLine();
            
-            if(text.isEmpty() || !text.contains(textCompare))
+            System.out.println("Trocou a mensagem -> " + (text.isEmpty() || !text.contains(textCompare)));
+
+            if(text.isEmpty() || !text.contains(textCompare)){
                 message = errorMessage.isEmpty() ? "Ops, Você inseriu um texto invalido!!!\nInsira novamente: " : errorMessage;
-            
+                choosePower = false;
+            } 
+
         } while(text.isEmpty() || !text.contains(textCompare));
  
         return text;

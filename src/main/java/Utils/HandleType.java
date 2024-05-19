@@ -107,7 +107,8 @@ public class HandleType {
             player[0] = player[0] + nerf;  
             player[1] = player[1] - segPower;
         } else {
-            opponent[0] = opponent[0] - nerf;
+            double newOpponentPoints = opponent[0] - nerf;
+            opponent[0] = newOpponentPoints <= 0 ? 0 : newOpponentPoints;
             opponent[1] += segPower;
         }
         

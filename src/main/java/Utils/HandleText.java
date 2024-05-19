@@ -9,8 +9,9 @@ public class HandleText {
 	}
         
 	public static void align(String[] texts, String alignment, boolean ln){
-		for(int i = 0; i < texts.length; i++){
-			align(texts[i], alignment, ln, "");
+                
+		for(int i = 0; i < texts.length; i++){   
+                    align(texts[i] == null ? "" : (i + 1) + " - " + texts[i], alignment, ln, "");
 		}
 	}
 
@@ -27,23 +28,27 @@ public class HandleText {
 	}
 
 	public static void align(String text, String alignment, boolean ln, String color) {
-		int width = globalWidth;
-		switch (alignment) {
-			case "center" -> width *= 1;
-			case "right" -> width *= 1.2;
-			case "left" -> width *= 0;
-			default -> width *= 1;
-		}
-		String space = " ";
-		String transformText = space.repeat((alignment != "left") ? width - text.length() / 2 : width / 2) + text;
+                if(text.isEmpty()) {
+                    System.out.print("");
+                } else {
+                    int width = globalWidth;
+                    switch (alignment) {
+                            case "center" -> width *= 1;
+                            case "right" -> width *= 1.2;
+                            case "left" -> width *= 0;
+                            default -> width *= 1;
+                    }
+                    String space = " ";
+                    String transformText = space.repeat((alignment != "left") ? width - text.length() / 2 : width / 2) + text;
 
-		if(!color.isEmpty())
-			transformText = colorText(transformText, color);
+                    if(!color.isEmpty())
+                            transformText = colorText(transformText, color);
 
-		if (ln == true)
-			System.out.println(transformText);
-		else
-			System.out.print(transformText);
+                    if (ln == true)
+                            System.out.println(transformText);
+                    else
+                            System.out.print(transformText);
+                }
 
 	}
 	public static String colorText(String text,String color) {

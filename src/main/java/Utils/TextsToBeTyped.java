@@ -174,17 +174,7 @@ public class TextsToBeTyped {
 
         "Conhecido como o Rei da Noite Eterna, o governante do submundo era um ser enigmático cujos motivos eram tão impenetráveis quanto as sombras que o cercavam. \n"+
         "Sua história era um mistério envolto em lendas e mitos, deixando os habitantes do submundo se perguntando se ele era um salvador ou um tirano disfarçado."
-    }
-};
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
+            }
+        };     
     }
     
