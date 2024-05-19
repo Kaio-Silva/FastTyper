@@ -43,7 +43,7 @@ public class HandleType {
         double correctGuesses = 0;
    
 
-        System.out.printf("\nVocê deve escrever o texto \"%s\": ", textTotype);
+        System.out.printf("\nEscreva o texto abaixo:\n\"%s\": ", textTotype);
         textTyped = scanner.nextLine();
 
         char[] lettersOfTyped = textTyped.toCharArray();

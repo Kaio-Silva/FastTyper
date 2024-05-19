@@ -62,12 +62,6 @@ public class TextsToBeTyped {
 
         "Na luz da lua cheia, uma aldeia se entregava a festas de luxúria desenfreada, como se possuída pela própria lua, cuja origem era um mistério perdido no tempo.",
 
-<<<<<<< HEAD
-        "Conhecido como o Rei da Noite Eterna, o governante do submundo era um ser enigmático cujos motivos eram tão impenetráveis quanto as sombras que o cercavam. \n"+
-        "Sua história era um mistério envolto em lendas e mitos, deixando os habitantes do submundo se perguntando se ele era um salvador ou um tirano disfarçado."
-            }
-        };     
-=======
         "Um amor proibido entre deuses desencadeou uma guerra celestial, desafiando as leis divinas e abalando os fundamentos do mundo dos deuses, um lembrete dos perigos das paixões proibidas."
     },
     // FASE 6
@@ -108,7 +102,5 @@ public class TextsToBeTyped {
         "Conhecido como o Rei da Noite Eterna, o governante do submundo era um ser enigmático, deixando os habitantes do submundo se perguntando se ele era um salvador ou um tirano disfarçado."
     }
 }; 
-      
->>>>>>> a2e49b2194080f7b930cad4542cb1c3f21bdacd4
     }
     

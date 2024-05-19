@@ -1,29 +1,13 @@
-<<<<<<< HEAD
-C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\TextsToBeTyped.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Views\Campaing\StoryTexts.java
-C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Views\Ranking.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\HandleText.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\HandleType.java
-C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\com\mycompany\fasttyper\FastTyper.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\Terminal.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\AsciiArts.java
+C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\TextsToBeTyped.java
+C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Database\Db.java
+C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Views\Ranking.java
+C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\com\mycompany\fasttyper\FastTyper.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Views\Campaing\Tournament.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Views\Campaing\Campaing.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Utils\HandleInputs.java
 C:\Users\luigi\Documents\NetBeansProjects\FastTyper\src\main\java\Views\Menu.java
-=======
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Utils/Terminal.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Views/Ranking.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Utils/AsciiArts.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Views/Menu.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Utils/HandleInputs.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Views/Campaing/Powers.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Views/Campaing/Tournament.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Database/Db.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Views/Campaing/Campaing.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Views/Campaing/StoryTexts.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Utils/HandleType.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Utils/TextsToBeTyped.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/Utils/HandleText.java
-/home/pedrohcoder/Documentos/Projetos/FastTyper/src/main/java/com/mycompany/fasttyper/FastTyper.java
->>>>>>> a2e49b2194080f7b930cad4542cb1c3f21bdacd4

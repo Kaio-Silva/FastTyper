@@ -1,29 +1,13 @@
-<<<<<<< HEAD
 Utils\HandleInputs.class
+Utils\TextsToBeTyped.class
+Views\Campaing\StoryTexts.class
+Utils\AsciiArts.class
+Views\Menu.class
 Views\Ranking.class
 Utils\HandleText.class
 Views\Campaing\Tournament.class
 com\mycompany\fasttyper\FastTyper.class
 Utils\Terminal.class
-Utils\TextsToBeTyped.class
-Views\Campaing\StoryTexts.class
 Utils\HandleType.class
-Utils\AsciiArts.class
-Views\Menu.class
+Database\Db.class
 Views\Campaing\Campaing.class
-=======
-Views/Campaing/Tournament.class
-Utils/HandleText.class
-Utils/AsciiArts.class
-Utils/HandleInputs.class
-Views/Menu.class
-Database/Db.class
-Utils/Terminal.class
-Utils/TextsToBeTyped.class
-Views/Campaing/StoryTexts.class
-Views/Campaing/Campaing.class
-Views/Ranking.class
-com/mycompany/fasttyper/FastTyper.class
-Utils/HandleType.class
-Views/Campaing/Powers.class
->>>>>>> a2e49b2194080f7b930cad4542cb1c3f21bdacd4
