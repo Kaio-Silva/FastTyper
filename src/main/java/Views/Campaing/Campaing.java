@@ -17,8 +17,8 @@ public class Campaing {
         
         for(int i = 0; i < 3; i++){
             HandleText.align(String.format(StoryTexts.story[0][i], FastTyper.name), "left");
-            FastTyper.name = FastTyper.name.isEmpty() ? HandleInputs.getTextInput() : FastTyper.name;  
-            Terminal.continueTo("\nPress \"Enter\" para continuar....");
+            FastTyper.name = FastTyper.name.isEmpty() ? HandleInputs.VerifyUserExist() : FastTyper.name;  
+            Terminal.continueTo("\nPress \"Enter\" para continuar...");
         }
         
         gameOver = Tournament.mainTournament(gameOver);

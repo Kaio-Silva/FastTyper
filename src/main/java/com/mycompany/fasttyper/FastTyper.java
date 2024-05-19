@@ -1,16 +1,19 @@
 package com.mycompany.fasttyper;
 
+import Views.Ranking.Ranking;
 import Utils.AsciiArts;
 import Utils.HandleText;
 import Utils.Terminal;
 import Views.*;
 import Views.Campaing.Campaing;
+import java.util.Random;
 
 
 public class FastTyper { 
     public static String name = "";
     public static boolean first = true;
     public static int attempts = 0;
+    public static Random random = new Random();
     
     public static void main(String[] args) {
         int i = Menu.mainMenu(-1);

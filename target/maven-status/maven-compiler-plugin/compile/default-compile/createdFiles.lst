@@ -1,13 +1,15 @@
 Utils\HandleInputs.class
+Views\Ranking\StoryRanking.class
 Utils\TextsToBeTyped.class
 Views\Campaing\StoryTexts.class
+Views\Ranking\Ranking.class
 Utils\AsciiArts.class
 Views\Menu.class
-Views\Ranking.class
 Utils\HandleText.class
 Views\Campaing\Tournament.class
 com\mycompany\fasttyper\FastTyper.class
 Utils\Terminal.class
+Views\Ranking\Match.class
 Utils\HandleType.class
 Database\Db.class
 Views\Campaing\Campaing.class

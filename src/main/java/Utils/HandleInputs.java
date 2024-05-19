@@ -7,9 +7,21 @@ import Views.Campaing.Campaing;
 public class HandleInputs {
     static Scanner input = new Scanner(System.in);
     
+    
+    public static String VerifyUserExist(){
+        String resp;
+        do{
+            resp = getTextInput("\nEssa pessoa já passou pelo inferno!!!\nEscolha outro nome para o seu personagem: ");
+        } while(Database.Db.getPlayerPos(resp) != 0);
+        
+        return resp;
+    }
+    
+    
     public static String getTextInput(){
         return getTextInput("", "", "", false);
     }
+    
     
     public static String getTextInput(String errorMessage, boolean choosePower){
         String resp = "";
@@ -25,13 +37,16 @@ public class HandleInputs {
         return resp;
     }
     
+    
     public static String getTextInput(String errorMessage){
         return getTextInput("", errorMessage, "", false);
     }
     
+    
     public static String getTextInput(String errorMessage, String textCompare){
         return getTextInput("", errorMessage, textCompare, false);
     }
+    
     
     public static String getTextInput(String message, String errorMessage, String textCompare, boolean choosePower){
         String text;
@@ -45,8 +60,6 @@ public class HandleInputs {
                 } 
             }
             text = input.nextLine();
-           
-            System.out.println("Trocou a mensagem -> " + (text.isEmpty() || !text.contains(textCompare)));
 
             if(text.isEmpty() || !text.contains(textCompare)){
                 message = errorMessage.isEmpty() ? "Ops, Você inseriu um texto invalido!!!\nInsira novamente: " : errorMessage;
@@ -63,9 +76,11 @@ public class HandleInputs {
         return getIntInput(message, "", limit);
     }
     
+    
     public static int getIntInput(int limit){
         return getIntInput("", "", limit);
     }
+    
     
     public static int getIntInput(String message, String errorMessage, int limit){
         int num;

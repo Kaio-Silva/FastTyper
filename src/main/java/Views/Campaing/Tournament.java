@@ -1,7 +1,5 @@
 package Views.Campaing;
 
-import java.util.Random;
-
 import Utils.HandleInputs;
 import Utils.HandleText;
 import Utils.HandleType;
@@ -10,7 +8,7 @@ import Utils.TextsToBeTyped;
 import com.mycompany.fasttyper.FastTyper;
 
 public class Tournament {
-    static Random random = new Random();
+    
     static int whichPower = 0;
     
     public static boolean mainTournament(boolean gameOver) {
@@ -134,10 +132,10 @@ public class Tournament {
             } 
             
             int pointsWord = i * 10;
-            String whatType = TextsToBeTyped.fases[i - 1][random.nextInt(0,5)]; 
+            String whatType = TextsToBeTyped.fases[i - 1][FastTyper.random.nextInt(0,5)]; 
             double[] round = HandleType.mainType(pointsWord, whatType); 
             
-            int powerOpponent = random.nextInt(0, 2); 
+            int powerOpponent = FastTyper.random.nextInt(0, 2); 
             double[] roundOpponent = HandleType.mainType(pointsWord, whatType, 150 - pointsWord,  200 - pointsWord);
             System.out.printf("Round: %f, %f\nRound Oponente: %f, %f\nPower: %s\nPower Oponente: %s", round[0], round[1], roundOpponent[0], roundOpponent[1], whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]);
             double[][] newPerformance = HandleType.reCalculatePoints(round, roundOpponent, whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]); 

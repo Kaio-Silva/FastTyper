@@ -16,7 +16,6 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 
 public class Db {
-
     public static String dbName = "fastTyperDb";
     public static String cllcName = "rank";
 
@@ -87,10 +86,5 @@ public class Db {
         } catch (MongoException e) {
             System.out.println("Falha");
         }
-    }
-
-    public static void main(String[] args) {
-        
-        System.out.println(getPlayerPos("Jorge"));
     }
 }
