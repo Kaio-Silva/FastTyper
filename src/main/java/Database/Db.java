@@ -14,6 +14,9 @@ import static com.mongodb.client.model.Sorts.descending;
 import io.github.cdimascio.dotenv.Dotenv;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -36,24 +39,37 @@ public class Db {
             .serverApi(serverApi)
             .build();
 
-    public static String[] getRank() {
-        String result[] = new String[11];
-        try {
-
-            MongoClient mongoClient = MongoClients.create(settings);
-            MongoCollection<Document> collection = mongoClient.getDatabase(dbName).getCollection(cllcName);
-            List<Document> documents = collection.find().limit(10).sort(descending("Pontos")).into(new ArrayList<>());
-            int numIndex = 0;
-            for (Document document : documents) {
-                result[numIndex] = document.toJson();
-                numIndex++;
+            public static String[] getRank() {
+                String result[] = new String[11];
+                String[] finalResult = new String[11];
+                try {
+                    MongoClient mongoClient = MongoClients.create(settings);
+                    MongoCollection<Document> collection = mongoClient.getDatabase(dbName).getCollection(cllcName);
+                    List<Document> documents = collection.find().limit(10).sort(descending("Pontos")).into(new ArrayList<>());
+                    int numIndex = 0;
+                    for (Document document : documents) {
+                        result[numIndex] = document.toJson();
+                        numIndex++;
+                    }
+                    for (int x = 0; x < result.length; x++) {
+                        if (result[x] == null)
+                            break;
+                        Pattern pattern = Pattern.compile("[\\{\\}:,\\\"]", Pattern.MULTILINE);
+                        Matcher matcher = pattern.matcher(result[x]);
+                        finalResult[x] = matcher.replaceAll("")
+                        .replace(" Nome",x+1 + "º")
+                        .replace("Pontos", "- Pontos:")
+                        .replace("_id","")
+                        .replace("$oid","")
+                        .substring(26);
+        
+                    }
+                    return finalResult;
+                } catch (MongoException e) {
+                    e.printStackTrace();
+                }
+                return null;
             }
-            return result;
-        } catch (MongoException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     public static int getPlayerPos(String playername) {
         int result = 0;
