@@ -8,18 +8,21 @@ import com.mongodb.ServerApiVersion;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Updates;
+
 import static com.mongodb.client.model.Sorts.descending;
 import io.github.cdimascio.dotenv.Dotenv;
 import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
 public class Db {  
     public static String dbName = "fastTyperDb";
     public static String cllcName = "rank";
 
-    public static Dotenv dotenv = Dotenv.load();
+    public static Dotenv dotenv = Dotenv.configure().directory("src/main/java").load();
 
     public static String connectionString = "mongodb+srv://" + dotenv.get("MONGO_USER") + ":" + dotenv.get("MONGO_PWD")
             + "@cluster0.jts6smd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -85,6 +88,26 @@ public class Db {
 
         } catch (MongoException e) {
             System.out.println("Falha");
+        }
+    }
+
+    public static void updateByName(String name, double points) {
+        try {
+            MongoClient mongoClient = MongoClients.create(settings);
+            MongoCollection<Document> collection = mongoClient.getDatabase(dbName).getCollection(cllcName);
+
+            Bson update = Updates.combine(
+                Updates.set("Pontos", points));
+            
+            collection.updateOne(new Document()
+                    .append("Nome", name),
+                    update
+            );
+
+            System.out.println("Update realizado!");
+
+        } catch (MongoException e) {
+            System.out.println("Falha em update");
         }
     }
 }

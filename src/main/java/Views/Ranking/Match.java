@@ -9,18 +9,13 @@ import com.mycompany.fasttyper.FastTyper;
 public class Match {
     public static void mainMatch(){
         boolean wannaPlay = true;
-        
+
         do {
-            String difficultyLevel = "Lista de dificuldades:\n\n" + "1- Facil\n" + "2- Medio\n" + "3- Dificil\n\n";
-            HandleText.align(difficultyLevel, "left", false);
-
-            int whichLevel = HandleInputs.getIntInput("Escolha a dificuldade: ", "Ops, você inseriu uma dificuldade invalida!!!\nInsira novamente: ", 3);
             Terminal.continueTo("\nPress \"Enter\" para iniciar a partida...");  
-
-            handleMatch(whichLevel);
+            handleMatch();
 
             HandleText.align("Você deseja jogar novamente? Sim/Nao", "left", true);
-            String whichOption = HandleInputs.getTextInput("Ops, você inseriu uma reposta invalida!!!", whichLevel != 0);
+            String whichOption = HandleInputs.getTextInput("Ops, você inseriu uma reposta invalida!!!");
 
             if(whichOption.equals("nao")){
                 wannaPlay = false;
@@ -33,18 +28,27 @@ public class Match {
         Terminal.continueTo("\nPress \"Enter\" para ao menu...");
     }
     
-    public static void handleMatch(int whichLevel){
+    public static void handleMatch(){
         HandleText.align("MODO RANKING", "center", true);
         
-        String whatType = Utils.TextsToBeTyped.RankingLevels[whichLevel][FastTyper.random.nextInt(0,5)];
+        String whatType = Utils.TextsToBeTyped.RankingLevels[FastTyper.random.nextInt(0,5)];
         
-        double[] performance = HandleType.mainType(whichLevel * 10, whatType);
-        Database.Db.insertPlayer(FastTyper.name, performance[0]);
+        double[] performance = HandleType.mainType(100, whatType);
         
-        String resp = "Player:\n Pontos: " + performance[0] + "\nTempo: " + performance[1] + "Posição: " + Database.Db.getPlayerPos(FastTyper.name);
+        if(Database.Db.getPlayerPos(FastTyper.name) == 0)
+            Database.Db.insertPlayer(FastTyper.name, performance[0]);
+        else
+            Database.Db.updateByName(FastTyper.name, performance[0]);
+        
+        String resp = "Player:\nPontos: " + performance[0] + "\nTempo: " + performance[1] + "\nPosição: " + Database.Db.getPlayerPos(FastTyper.name);
         HandleText.align(resp, whatType, true);
         
         String[] ranking = Database.Db.getRank();
+
+        for(String item : ranking) {
+            System.out.println("Item ->   " + item);
+        }
+        
         HandleText.align(ranking, "center", true);
     }
 }

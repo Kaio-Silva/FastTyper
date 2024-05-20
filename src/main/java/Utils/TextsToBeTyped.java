@@ -103,9 +103,8 @@ public class TextsToBeTyped {
         }       
     }; 
     
-    public static String[][] RankingLevels = {
-        { 
-            // FASE 1
+    public static String[] RankingLevels = {
+       
             "Uma serpente vivia em uma caverna escura, acumulando tesouros, mas sua avareza a transformou em uma guardiã mesquinha.",
 
             "Um rei ganancioso deixou seu povo na miséria ao acumular riquezas, perdendo o amor deles no processo, aprendendo tarde demais sobre a verdadeira riqueza na generosidade.",
@@ -115,31 +114,7 @@ public class TextsToBeTyped {
             "Uma formiga gananciosa acumulou alimentos enquanto suas companheiras lutavam para sobreviver, encontrando-se cercada por sua própria ganância no final.",
 
             "Um comerciante ambicioso, cego pela avareza, perdeu tudo ao priorizar o lucro sobre as relações humanas e a bondade."
-        },
-            // FASE 2
-        {
-            "Em uma mansão antiga, um banquete foi preparado, mas um feitiço transformava os excessos em criaturas insaciáveis, uma advertência sobre indulgência.",
-
-            "Um homem fez um pacto com um demônio por riquezas infinitas, perdendo sua humanidade à medida que sua gula crescia, um mito sobre vender a alma pela satisfação dos desejos.",
-
-            "Um deus da gula ameaçava destruir o mundo, selado pelos outros deuses, mas a tentação de seu retorno era temida, um lembrete sobre os perigos dos desejos incontroláveis.",
-
-            "Um banquete oferecido em uma vila remota era alimentado pela energia vital dos participantes, que perdiam suas almas para alimentar a gula sombria por trás, uma advertência sobre prazeres fugazes.",
-
-            "Conta-se que a gula nasceu como uma criatura insaciável do vazio primordial, infiltrando-se na mente dos humanos, gerando o pecado da gula, uma ânsia voraz por mais do que o necessário."
-        },
-            // FASE 3
-        {
-            "Uma estrela cadente, na verdade uma deusa da bondade, foi derrubada por uma criatura invejosa, espalhando inveja pelo mundo.",
-
-            "Um rei generoso foi traído por uma empregada invejosa, envenenando presentes e gerando discórdia no reino.",
-
-            "Uma árvore mágica realizava desejos, mas um jovem ambicioso sucumbiu à inveja ao ver os outros felizes.",
-
-            "Uma mascote amada foi capturada por um residente invejoso, espalhando inveja pela cidade antes pacífica.",
-
-            "A rivalidade entre dois irmãos se tornou amarga quando a inveja consumiu um deles, levando à sabotagem e à deterioração de sua relação."
-        }
+        
     }; 
  }
     

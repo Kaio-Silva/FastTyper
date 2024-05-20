@@ -1,6 +1,5 @@
 package Views.Ranking;
 
-import Utils.HandleInputs;
 import Utils.HandleText;
 import Utils.Terminal;
 import Views.Campaing.Campaing;
