@@ -15,7 +15,7 @@ import java.util.List;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class Db {
+public class Db {  
     public static String dbName = "fastTyperDb";
     public static String cllcName = "rank";
 

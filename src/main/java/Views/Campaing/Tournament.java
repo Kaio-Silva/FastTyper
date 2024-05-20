@@ -136,7 +136,7 @@ public class Tournament {
             double[] round = HandleType.mainType(pointsWord, whatType); 
             
             int powerOpponent = FastTyper.random.nextInt(0, 2); 
-            double[] roundOpponent = HandleType.mainType(pointsWord, whatType, 150 - pointsWord,  200 - pointsWord);
+            double[] roundOpponent = HandleType.mainType(0, whatType, 150 - pointsWord,  200 - pointsWord);
             System.out.printf("Round: %f, %f\nRound Oponente: %f, %f\nPower: %s\nPower Oponente: %s", round[0], round[1], roundOpponent[0], roundOpponent[1], whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]);
             double[][] newPerformance = HandleType.reCalculatePoints(round, roundOpponent, whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]); 
             
