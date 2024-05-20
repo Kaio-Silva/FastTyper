@@ -10,10 +10,13 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Updates;
 
+import Utils.HandleText;
+
 import static com.mongodb.client.model.Sorts.descending;
 import io.github.cdimascio.dotenv.Dotenv;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,6 +25,9 @@ import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 
 public class Db {  
+
+
+
     public static String dbName = "fastTyperDb";
     public static String cllcName = "rank";
 
@@ -37,9 +43,11 @@ public class Db {
     public static MongoClientSettings settings = MongoClientSettings.builder()
             .applyConnectionString(new ConnectionString(connectionString))
             .serverApi(serverApi)
+            
             .build();
 
             public static String[] getRank() {
+            
                 String result[] = new String[11];
                 String[] finalResult = new String[11];
                 try {
@@ -51,6 +59,7 @@ public class Db {
                         result[numIndex] = document.toJson();
                         numIndex++;
                     }
+                    
                     for (int x = 0; x < result.length; x++) {
                         if (result[x] == null)
                             break;
@@ -64,6 +73,11 @@ public class Db {
                         .substring(26);
         
                     }
+
+                    for(int i = 0; i < result.length; i++){   
+                        HandleText.align(result[i] == null ? "" : finalResult[i], "center", true, "");
+                    }
+
                     return finalResult;
                 } catch (MongoException e) {
                     e.printStackTrace();
@@ -99,11 +113,8 @@ public class Db {
                     .append("_id", new ObjectId())
                     .append("Nome", playername)
                     .append("Pontos", points));
-
-            System.out.println("Inserido com sucesso");
-
         } catch (MongoException e) {
-            System.out.println("Falha");
+            System.out.println("\nFalha na inserção");
         }
     }
 
@@ -119,11 +130,8 @@ public class Db {
                     .append("Nome", name),
                     update
             );
-
-            System.out.println("Update realizado!");
-
         } catch (MongoException e) {
-            System.out.println("Falha em update");
+            System.out.println("\nFalha em update");
         }
     }
 }

@@ -10,8 +10,13 @@ public class HandleInputs {
     
     public static String VerifyUserExist(){
         String resp;
-        do{
-            resp = getTextInput("\nEssa pessoa já passou pelo inferno!!!\nEscolha outro nome para o seu personagem: ");
+        int i = 0;
+        do{ 
+            if(i > 0)
+                HandleText.align("\nEssa pessoa já passou pelo inferno!!!\nEscolha outro nome para o seu personagem: ");
+                
+            resp = getTextInput();
+            i++;
         } while(Database.Db.getPlayerPos(resp) != 0);
         
         return resp;

@@ -7,6 +7,7 @@ import Utils.Terminal;
 import com.mycompany.fasttyper.FastTyper;
 
 public class Match {
+    static double points = 0;
     public static void mainMatch(){
         boolean wannaPlay = true;
 
@@ -34,21 +35,19 @@ public class Match {
         String whatType = Utils.TextsToBeTyped.RankingLevels[FastTyper.random.nextInt(0,5)];
         
         double[] performance = HandleType.mainType(100, whatType);
-        
+       
+
         if(Database.Db.getPlayerPos(FastTyper.name) == 0)
             Database.Db.insertPlayer(FastTyper.name, performance[0]);
-        else
-            Database.Db.updateByName(FastTyper.name, performance[0]);
+        else {
+            if(points < performance[0])
+                Database.Db.updateByName(FastTyper.name, performance[0]);
+        }
         
         String resp = "Player:\nPontos: " + performance[0] + "\nTempo: " + performance[1] + "\nPosição: " + Database.Db.getPlayerPos(FastTyper.name);
         HandleText.align(resp, whatType, true);
         
-        String[] ranking = Database.Db.getRank();
-
-        for(String item : ranking) {
-            System.out.println("Item ->   " + item);
-        }
-        
-        HandleText.align(ranking, "center", true);
+        Database.Db.getRank();
+        points = performance[0];
     }
 }

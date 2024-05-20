@@ -8,14 +8,25 @@ import Views.*;
 import Views.Campaing.Campaing;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 
 public class FastTyper { 
+
     public static String name = "";
     public static boolean first = true;
     public static int attempts = 0;
     public static Random random = new Random();
-    
+
     public static void main(String[] args) {
+
+
+        //Registro de eventos de erros para o banco de dados - Obrigatório
+        Logger logger = LoggerFactory.getLogger("org.mongodb.driver");
+        logger.error("Logging an Error");
+
         int i = Menu.mainMenu(-1);
         System.out.println("\n");
         boolean playing = true;

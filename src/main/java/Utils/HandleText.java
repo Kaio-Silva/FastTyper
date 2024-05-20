@@ -8,10 +8,9 @@ public class HandleText {
 		align(text, "center", true, "");
 	}
         
-	public static void align(String[] texts, String alignment, boolean ln){
-                
+	public static void align(String[] texts, String alignment, boolean ln){      
 		for(int i = 0; i < texts.length; i++){   
-                    align(texts[i] == null ? "" : (i + 1) + " - " + texts[i], alignment, ln, "");
+            align(texts[i] == null ? "" : (i + 1) + " - " + texts[i], alignment, ln, "");
 		}
 	}
 
