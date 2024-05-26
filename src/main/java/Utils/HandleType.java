@@ -1,32 +1,34 @@
 package Utils;
 
 import Views.Campaing.Tournament;
+import Views.Ranking.Match;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
 import java.util.Scanner;
 
 public class HandleType {
+    static Random random = new Random();
+    public static String wrongsTyped = "";
     
-     public static double[] mainType(int opponentPoints, String textTotype) {
-         return mainType(opponentPoints, textTotype, -1, -1);
-     }
+    public static double[] mainType(int opponentPoints, String textTotype) {
+        return mainType(opponentPoints, textTotype, -1, -1, -1);
+    }
     
-    public static double[] mainType(int opponentPoints, String textTotype, int minTimeOpponent, int maxTimeOpponent) {
+    public static double[] mainType(int opponentPoints, String textTotype, int minTimeOpponent, int maxTimeOpponent, int level) {
         double startTime = minTimeOpponent == -1 ? getCurrentTime() : 0;
         
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
 
         String textTyped = "";
         double accuracyRate;
         double endTime;
         
         if(minTimeOpponent == -1){
-            accuracyRate = calculateAccuracyRate(scanner, textTotype, textTyped);
+            accuracyRate = calculateAccuracyRate(scanner, textTotype, textTyped, -1);
             endTime = getCurrentTime();
         } else {
-           accuracyRate = 100;
+           accuracyRate = calculateAccuracyRate(scanner, textTotype, textTyped, level);
            endTime = random.nextInt(minTimeOpponent, maxTimeOpponent);
         }
          
@@ -38,17 +40,18 @@ public class HandleType {
         return resp;
     }
 
-    private static double calculateAccuracyRate(Scanner scanner, String textTotype, String textTyped) {
+    private static double calculateAccuracyRate(Scanner scanner, String textTotype, String textTyped, int level) {
         
         int totalLetters = 0;
-        double correctGuesses = 0;
 
         char[] lettersOfText = textTotype.toCharArray();
         char[] lettersOfTyped = new char[lettersOfText.length];
 
-        System.out.printf("\nEscreva o texto abaixo:\n\"%s\":\n", textTotype);
-        textTyped = scanner.nextLine();
-
+        if(level == -1){
+            System.out.printf("\nEscreva o texto abaixo:\n\"%s\":\n", textTotype);
+            textTyped = scanner.nextLine();
+        }
+        
         if(textTyped.length() > lettersOfText.length){
             totalLetters += textTyped.length();
             lettersOfTyped = textTyped.toCharArray();
@@ -65,22 +68,52 @@ public class HandleType {
             lettersToCompare[i] = lettersOfTyped[i];
             letters[i] = lettersOfText[i];
         }
-
-        for(int x = 0; x < totalLetters; x++) {
-            if(lettersToCompare[x] == letters[x]){
-                correctGuesses++;
-                Tournament.wrongsTyped += "\u001B[32m" + lettersToCompare[x];
-            } else if(x > textTotype.length()){
-                Tournament.wrongsTyped += "\u001B[31m" + lettersToCompare[x];
-            } else {
-                Tournament.wrongsTyped += "\u001B[31m" + letters[x];
-            } 
-       }
-
+        
+        double correctGuesses = level != -1 ? correctingTexts(totalLetters, lettersOfText, level)
+                                            : correctingTexts(totalLetters, letters, lettersToCompare); 
+        
         double accuracyPercentage = (correctGuesses / totalLetters) * 100;
-        Tournament.wrongsTyped += "\u001B[0m";
+        wrongsTyped += "\u001B[0m";
+        Tournament.wrongsTypedOpponent += "\u001B[0m";
 
         return accuracyPercentage;
+    }
+    
+    public static double correctingTexts(int totalLetters, char[] lettersToCompare, int levelOpponent){
+        return correctingTexts(totalLetters, null, lettersToCompare, levelOpponent);
+    }
+    
+    
+    public static double correctingTexts(int totalLetters, char[] letters, char[] lettersToCompare){
+        return correctingTexts(totalLetters, letters, lettersToCompare, -1);
+    }
+    
+    public static double correctingTexts(int totalLetters, char[] letters, char[] lettersToCompare, int levelOpponent){
+        double correctGuesses = 0;
+
+        for(int x = 0; x < totalLetters; x++) {
+            if(levelOpponent == -1){
+                if(lettersToCompare[x] == letters[x]){
+                    correctGuesses++;
+                    wrongsTyped += "\u001B[32m" + lettersToCompare[x];
+                } else if(x > totalLetters){
+                    wrongsTyped += "\u001B[31m" + lettersToCompare[x];
+                } else {
+                    wrongsTyped += "\u001B[31m" + letters[x];
+                } 
+            } else {
+                double resp = (random.nextInt(0, 100) / totalLetters ) * 100;
+
+                if(resp >= x){
+                    correctGuesses++;
+                    Tournament.wrongsTypedOpponent += "\u001B[32m" + lettersToCompare[x];
+                } else {
+                    Tournament.wrongsTypedOpponent += "\u001B[31m" + lettersToCompare[x];
+                }
+            }
+       }
+
+       return correctGuesses;
     }
 
     private static double getCurrentTime() {
@@ -100,8 +133,9 @@ public class HandleType {
     }  
     
     public static double calculatePoints(double accuracyRate, double opponentPoints, double timeTaken) {
-        double points = accuracyRate * opponentPoints / timeTaken;        
-        return points;
+        double points = accuracyRate * opponentPoints / timeTaken;       
+        BigDecimal bd = new BigDecimal(points).setScale(3, RoundingMode.HALF_EVEN);
+        return bd.doubleValue();
     }  
     
     public static double[][] reCalculatePoints(double[] player, double[] opponent, String powerPlayer, String powerOpponent){

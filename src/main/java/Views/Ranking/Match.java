@@ -44,8 +44,8 @@ public class Match {
                 Database.Db.updateByName(FastTyper.name, performance[0]);
         }
         
-        String resp = "Player:\nPontos: " + performance[0] + "\nTempo: " + performance[1] + "\nPosição: " + Database.Db.getPlayerPos(FastTyper.name);
-        HandleText.align(resp, whatType, true);
+        String resp = "Player:\nSeu Desempenho: " + HandleType.wrongsTyped + "\nPontos: " + performance[0] + "\nTempo: " + performance[1] + "\nPosição: " + Database.Db.getPlayerPos(FastTyper.name);
+        HandleText.align(resp, "left", true);
         
         Database.Db.getRank();
         points = performance[0];

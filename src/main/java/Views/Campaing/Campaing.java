@@ -25,6 +25,7 @@ public class Campaing {
         FastTyper.first = false;
         tournamentStarted = false;
         Tournament.whichPower = 0;
+        HandleType.wrongsTyped = "";
         lifes = 3;
          
         if(gameOver)

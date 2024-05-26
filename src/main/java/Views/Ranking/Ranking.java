@@ -15,7 +15,8 @@ public class Ranking {
          
         for(int i = 0; i < StoryRanking.story.length; i++){
             HandleText.align(StoryRanking.story[i], "left", true);
-            Terminal.continueTo("\nPress \"Enter\" para prosseguir..."); 
+            if(i < StoryRanking.story.length - 1)    
+                Terminal.continueTo("\nPress \"Enter\" para prosseguir..."); 
         }
         
         Match.mainMatch();

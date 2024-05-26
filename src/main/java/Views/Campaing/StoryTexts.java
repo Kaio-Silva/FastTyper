@@ -62,8 +62,11 @@ public class StoryTexts {
         "bela batalha pequeno ser, " ,
         "que pena, agora sua pobre alma sera minha, assim como a de todos os outros..."
     }, {
-        "HISTORIA DE ENTRADA BOSS",
-        "Eu te dei tudo, agora é hora de eu tomar tudo de volta.",
+        "Ola meu caro devedor, pelo visto voce se saiu melhor do que deveria, aposto que não \n" +
+        "sabia que eu seria seu ultimo advesario não é? Eu o REI DO SUBMUNDO, dono das almas dos " +
+        "pecadores, dos endividados e do mal, a sua batalha final sera contra mim, mas primeiro " +
+        "quero aumentar as nossas apostas o que me diz?",
+        "Eu te dei tudo, agora e hora de eu tomar tudo de volta.",
         "Meu reino está além das chamas, e eu sou seu soberano.",
         "O abismo lhe aguarda, e lá eu reinarei em meio ao caos eterno sobre voce."
     }
