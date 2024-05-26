@@ -8,7 +8,7 @@ import Utils.TextsToBeTyped;
 import com.mycompany.fasttyper.FastTyper;
 
 public class Tournament {
-    
+    public static String wrongsTyped = "";
     static int whichPower = 0;
     
     public static boolean mainTournament(boolean gameOver) {
@@ -96,6 +96,8 @@ public class Tournament {
                 Terminal.continueTo("\nPress \"Enter\" para continuar...");
             }
             
+            wrongsTyped = "";
+            
         } while(i <= 8 && !gameOver);  
 
         return gameOver;
@@ -132,26 +134,26 @@ public class Tournament {
             } 
             
             int pointsWord = i * 10;
+            
             String whatType = TextsToBeTyped.fases[i - 1][FastTyper.random.nextInt(0,5)]; 
             double[] round = HandleType.mainType(pointsWord, whatType); 
             
             int powerOpponent = FastTyper.random.nextInt(0, 2); 
             double[] roundOpponent = HandleType.mainType(0, whatType, 150 - pointsWord,  200 - pointsWord);
-            System.out.printf("Round: %f, %f\nRound Oponente: %f, %f\nPower: %s\nPower Oponente: %s", round[0], round[1], roundOpponent[0], roundOpponent[1], whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]);
+      
             double[][] newPerformance = HandleType.reCalculatePoints(round, roundOpponent, whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]); 
-            
-            HandleText.align("\nCALCULANDO DESEMPENHO...\n", "left", "yellow");
-            Terminal.cleanTerminal(0);
          
             String powerPlayer = usePower.equalsIgnoreCase("nao") || usePower.isEmpty() ? "Nenhum poder selecionado" : listPlayerPowers[0][whichPower - 1];
             
             HandleText.align("Total round " + i + "\n" + "texto do round: \"" + whatType + "\"\n\n" + 
                     "Jogador:\n" + 
+                    "Seu Desempenho: " + wrongsTyped + "\n" + 
                     "Magia Utilizada: " + powerPlayer + "\n" + 
                     "Magia do Oponente: " + listOpponentsPowers[0][powerOpponent] + "\n" + 
                     "Tempo: " + newPerformance[0][1] + " segundos\n" + 
                     "Pontos: " + newPerformance[0][0] + " pontos\n\n" + 
                     whichOpponent + ":\n" + 
+                    "Desempenho do Oponente: " + HandleText.colorText(whatType, "green") + "\n" +
                     "Magia Utilizada: " + listOpponentsPowers[0][powerOpponent] + "\n" + 
                     "Magia do Oponente: " + powerPlayer + "\n" + 
                     "Tempo: " + newPerformance[1][1] + " segundos\n" + 

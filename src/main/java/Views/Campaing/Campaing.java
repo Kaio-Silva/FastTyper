@@ -14,23 +14,10 @@ public class Campaing {
         if(!FastTyper.first){
             StoryTexts.story[0][0] = "Bem vindo de volta, %s! Parece que você não aprendeu sua lição... Então, vamos recomeçar tudo!";
         }
-         char[] animationChars = new char[]{'|', '/', '-', '\\'};
         
         for(int i = 0; i < 3; i++){
             HandleText.align(String.format(StoryTexts.story[0][i], FastTyper.name), "left");
             FastTyper.name = FastTyper.name.isEmpty() ? HandleInputs.VerifyUserExist() : FastTyper.name;  
-            System.out.println();
-            for (int x = 0; x <= 100; x++) {
-                Terminal.cleanTerminal(0);
-                System.out.print("\r" + animationChars[x % 4] + " " + x + "%");
-                try{
-                    Thread.sleep(25);
-                } catch (Exception e){
-                    System.out.println("Erro ao carregar! " + e);
-                }
-                
-            }
-            System.out.println();
             Terminal.continueTo("\nPress \"Enter\" para continuar...");
         }
         

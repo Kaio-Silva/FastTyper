@@ -9,6 +9,7 @@ Utils\HandleText.class
 Views\Campaing\Tournament.class
 com\mycompany\fasttyper\FastTyper.class
 Utils\Terminal.class
+Views\Instructions.class
 Views\Ranking\Match.class
 Utils\HandleType.class
 Database\Db.class

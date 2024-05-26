@@ -10,7 +10,7 @@ public class Menu {
     public static int mainMenu(int i) {
         int option;
         String warning = HandleText.colorText("Ajuste o tamanho do terminal para jogar: A logo tem que ser totalmente visível.\n","yellow");
-        String[] options = {"Modo Ranking", "Modo Campanha", HandleText.colorText("Sair", "red")};
+        String[] options = {"Instrucoes", "Modo Campanha", "Modo Ranking", "Sair"};
         
         do { 
             if(i == -1){
@@ -27,7 +27,7 @@ public class Menu {
             option = input.nextInt();
 
 
-            if (option == 1 || option == 2 || option == 3) {
+            if (option == 1 || option == 2 || option == 3 || option == 4) {
                 Terminal.cleanTerminal(0);
                 break;
             } else {

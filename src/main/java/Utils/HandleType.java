@@ -1,5 +1,6 @@
 package Utils;
 
+import Views.Campaing.Tournament;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
@@ -41,35 +42,44 @@ public class HandleType {
         
         int totalLetters = 0;
         double correctGuesses = 0;
-   
+
+        char[] lettersOfText = textTotype.toCharArray();
+        char[] lettersOfTyped = new char[lettersOfText.length];
 
         System.out.printf("\nEscreva o texto abaixo:\n\"%s\":\n", textTotype);
         textTyped = scanner.nextLine();
 
-        char[] lettersOfTyped = textTyped.toCharArray();
-        char[] lettersOfText = new char[lettersOfTyped.length];
-
-        lettersOfText = textTotype.toCharArray();
-
-        if(lettersOfTyped.length > lettersOfText.length ){
-            totalLetters += lettersOfTyped.length;
-
-            for(int x = 0; x < lettersOfText.length; x++) {
-                if(lettersOfTyped[x] == lettersOfText[x]) {
-                    correctGuesses++;
-                }
-           }
-        } else {
+        if(textTyped.length() > lettersOfText.length){
+            totalLetters += textTyped.length();
+            lettersOfTyped = textTyped.toCharArray();
+        } else{
             totalLetters += lettersOfText.length;
-
-            for(int y = 0; y < lettersOfTyped.length; y++) {
-                if(lettersOfTyped[y] == lettersOfText[y]) {
-                    correctGuesses++;
-                }
-            }
+            for(int i = 0; i < textTyped.length(); i++)
+                lettersOfTyped[i] = textTyped.charAt(i);
         }
 
+        char[] letters = new char[totalLetters];
+        char[] lettersToCompare = new char[totalLetters];
+
+        for(int i = 0; i < lettersOfTyped.length; i++){
+            lettersToCompare[i] = lettersOfTyped[i];
+            letters[i] = lettersOfText[i];
+        }
+
+        for(int x = 0; x < totalLetters; x++) {
+            if(lettersToCompare[x] == letters[x]){
+                correctGuesses++;
+                Tournament.wrongsTyped += "\u001B[32m" + lettersToCompare[x];
+            } else if(x > textTotype.length()){
+                Tournament.wrongsTyped += "\u001B[31m" + lettersToCompare[x];
+            } else {
+                Tournament.wrongsTyped += "\u001B[31m" + letters[x];
+            } 
+       }
+
         double accuracyPercentage = (correctGuesses / totalLetters) * 100;
+        Tournament.wrongsTyped += "\u001B[0m";
+
         return accuracyPercentage;
     }
 

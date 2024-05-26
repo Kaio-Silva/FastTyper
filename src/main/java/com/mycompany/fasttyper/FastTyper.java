@@ -36,9 +36,12 @@ public class FastTyper {
                 case 0 -> 
                     i = Menu.mainMenu(i);
                 case 1 ->
-                    i = Ranking.mainRanking();
+                    i = Instructions.mainInstructions();
                 case 2 ->
                     i = Campaing.mainCampaing();
+                case 3 ->
+                    i = Ranking.mainRanking();
+                   
                 default -> {
                     playing = false;
                     Terminal.cleanTerminal(0);
