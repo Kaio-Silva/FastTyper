@@ -102,7 +102,7 @@ public class HandleType {
                     wrongsTyped += "\u001B[31m" + letters[x];
                 } 
             } else {
-                double resp = (random.nextInt(0, 100) / totalLetters ) * 100;
+                int resp = random.nextInt(0, totalLetters * 2);
 
                 if(resp >= x){
                     correctGuesses++;

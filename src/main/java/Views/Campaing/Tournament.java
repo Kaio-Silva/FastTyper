@@ -139,8 +139,8 @@ public class Tournament {
             String whatType = TextsToBeTyped.fases[i - 1][FastTyper.random.nextInt(0,5)]; 
             double[] round = HandleType.mainType(pointsWord, whatType); 
             
-            int powerOpponent = FastTyper.random.nextInt(0, 2); //pointsWord * 30
-            double[] roundOpponent = HandleType.mainType(0, whatType, pointsWord / 100,  pointsWord * 2, i);
+            int powerOpponent = FastTyper.random.nextInt(0, 2); 
+            double[] roundOpponent = HandleType.mainType(pointsWord, whatType, pointsWord / 100,  pointsWord * 2, i);
             
             double[][] newPerformance = HandleType.reCalculatePoints(round, roundOpponent, whichPower == 0 ? "0" : listPlayerPowers[1][whichPower - 1],  listOpponentsPowers[1][powerOpponent]); 
          
